@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/interactjs@1.3.4/dist/interact.min.js"></script>
     <script>
       var movable = document.querySelector('#movable-box');
-      document.onload(function(){
+      (function(){
       interact(movable)
         .draggable({
            restrict: {
@@ -22,7 +22,7 @@
           onmove: dragMoveListener,
           onend: function (event) {}
         });
-      });
+      })();
         
       function dragMoveListener (event) {
         var target = event.target,

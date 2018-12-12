@@ -43,10 +43,19 @@
       }
       
       function addIdolImage(){
-        var idols = ["akane"];
+        var idols = ["akane","ami","anna","arisa","ayumu","azusa",
+          "chihaya","chizuru","elena","emily","fuuka",
+          "haruka","hibiki","hinata","iku","iori","julia",
+          "kana","kaori","karen","konomi","kotoha","makoto",
+          "mami","matsuri","megumi","miki","minako","mirai",
+          "miya","mizuki","momoko","nao","noriko","reika","rio",
+          "ritsuko","roco","sayoko","serika","shiho","sizuka","subaru",
+          "takane","tamaki","tomoka","tsubasa","tsumugi","umi","yayoi",
+          "yukiho","yuriko"];
         for(var i=0; i<idols.length; i++) {
           addImage(idols);
-      }
+        }
+      }"
         
       function addImage(name){
         $("#idol").append("<img class='draggable movable-box'" + 

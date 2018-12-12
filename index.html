@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title></title>
+    <style>
+      #movable-box {
+        background-color: #cccccc;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/interactjs@1.3.4/dist/interact.min.js"></script>
+    <script>
+      var movable = document.querySelector('#movable-box');
+      
+      interact(movable)
+        .draggable({
+          allowFrom: '.drag-handle',
+          onmove: function (event) {
+            /* ... /
+          }
+        })
+        .resizable({
+          allowFrom: '.resize-handle',
+          onmove: function (event) {
+            / ... /
+          }
+        })
+        .pointerEvents({
+          allowFrom: '',
+        });;
+    </script>
+  </head>
+  <body>
+    <div id="movable-box">
+      <div id="drag-point" />
+    </div>
+  </body>
+</html>

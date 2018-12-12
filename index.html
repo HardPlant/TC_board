@@ -17,7 +17,6 @@
   crossorigin="anonymous"></script>
     <script>
       (function(){
-        addIdolImage();
       interact(".draggable")
         .draggable({
            
@@ -25,7 +24,9 @@
           onend: function (event) {}
         });
       })();
-        
+        $(function() {
+          addIdolImage();
+        });
       function dragMoveListener (event) {
         var target = event.target,
         // keep the dragged position in the data-x/data-y attributes

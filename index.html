@@ -15,6 +15,9 @@
         width: 400px;
         height: 225px;
       }
+      .hide {
+        display: none;
+      }
       
       
     </style>
@@ -34,6 +37,7 @@
       })();
         $(function() {
           addIdolImage();
+          hideToggle();
         });
       function dragMoveListener (event) {
         var target = event.target,
@@ -72,6 +76,16 @@
                             + name + ".png'/>"
         $("#idol").append(src);
       }
+      
+      function hideToggle() {
+        $('.desc').toggle(function () {
+    $(this).addClass("hide");
+        }, function () {
+    $(this).removeClass("hide");
+        });
+      }
+                     
+
 
     </script>
   </head>
@@ -82,6 +96,7 @@
     </div>
     <div id="image0">
       <img class="background-box" src="https://raw.githubusercontent.com/HardPlant/TC_board/master/images/image0.jpg">
+      <div class="desc">
       <p>고도 서스펜스호러 </p><br/>
 
 <p> 주인공:여고생, 조난당해 고도에 흘러들어왔다만... </p><br/>
@@ -90,10 +105,12 @@
 <p> 관의 여주인:고도에있는 낡은 관의 주인. 왜 이런곳에 별장을...? </p><br/>
 <p> 메이드:관의 메이드. 주인의 말에는 절대복종. 이라고 정해져있는듯하다만... </p><br/>
 </p>
+      </div>
     </div>
     
     <div id="image1">
       <img class="background-box" src="https://raw.githubusercontent.com/HardPlant/TC_board/master/images/image1.png">
+      <div class="desc">
       <p>동화풍 이야기 </p><br/>
 
 <p> 소녀:작은 마을에사는 얌전한 소녀♪ </p><br/>
@@ -102,9 +119,11 @@
 <p> 늑대:숲에 사는 늑대씨. 푹신푹신! </p><br/>
 <p> 여행자:어딘가 신비한 여행자씨☆ </p><br/>
       </p>
+      </div>
     </div>
     <div id="image2">
       <img class="background-box" src="https://raw.githubusercontent.com/HardPlant/TC_board/master/images/image2.png">
+      <div class="desc">
       <p>근미래 아웃사이더 </p><br/>
 
 <p> 더스크:황폐한 도심부를 혼자 방랑하고있다. </p><br/>
@@ -112,7 +131,7 @@
 <p> 아마릴리스:아웃레이지군에 잡힌 소녀. 신비한 힘을 가지고있다 </p><br/>
 <p> 벨벳:아웃레이지군의 특공대장. 압도적인 강함을 자랑한다 </p><br/>
 <p> 파이널데이: 아웃레이지 군의 헤드. 혼란스런 세계를 손에 넣으려 하고있다 </p><br/>
-
+</div>
     </div>
     <div>
     

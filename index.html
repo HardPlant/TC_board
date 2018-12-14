@@ -53,7 +53,7 @@
         // update the posiion attributes
         target.setAttribute('data-x', x);
         target.setAttribute('data-y', y);
-        storeCoord(target);
+        storeCoord(target, x, y);
       }
       
       function addIdolImage(){
@@ -96,7 +96,7 @@
         return;
       }
       
-      console.log(id + "'s localStorage : " + saveCoord.x + ", " + saveCoord.y);
+      console.log(id + "'s localStorage : " + savedCoord.x + ", " + savedCoord.y);
       
       target.attr("data-x", savedCoord.x);
       target.attr("data-y", savedCoord.y);
@@ -106,10 +106,8 @@
 
     }
 
-    function storeCoord(target) {
+    function storeCoord(target, x, y) {
     // target is interactjs object
-       x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
-       y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
       var coord = {
         x: x,
         y: y

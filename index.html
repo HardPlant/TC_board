@@ -91,12 +91,20 @@
     // target is jQuery object
       var id = target.attr("id");
       if (id == null) return;
-      var savedCoord = localStorage.getItem(id);
-      if ( savedCoord === null ) {
+      
+      var saved_x = localStorage.getItem("x_of_" + id);
+      var saved_y = localStorage.getItem("y_of_" + id);
+      
+      if ( !(saved_x && saved_y) ) {
         return;
       }
       
-      console.log(id + "'s localStorage : " + savedCoord.x + ", " + savedCoord.y);
+      var savedCoord ={
+        x: Number(saved_x),
+        y: Number(saved_y)
+      }
+      
+      console.log(id + "'s localStorage : " + Number(saved_x) + ", " + Number(saved_y));
       
       target.attr("data-x", savedCoord.x);
       target.attr("data-y", savedCoord.y);
@@ -113,7 +121,8 @@
         y: y
       }
       console.log("storing " + target.getAttribute('id') + "'s "+ coord.x + ", " + coord.y);
-      localStorage.setItem(target.getAttribute('id'), coord);
+      localStorage.setItem("x_of_" + target.getAttribute('id'), coord.x);
+      localStorage.setItem("y_of_" + target.getAttribute('id'), coord.y);
     }
 
     </script>

@@ -53,6 +53,7 @@
         // update the posiion attributes
         target.setAttribute('data-x', x);
         target.setAttribute('data-y', y);
+        storeCoord(target);
       }
       
       function addIdolImage(){
@@ -71,10 +72,11 @@
       }
         
       function addImage(name){
-        var src = "<img class='draggable movable-box'"
+        var src = "<img id="+ name + " class='draggable movable-box'"
                             + " src='https://raw.githubusercontent.com/HardPlant/TC_board/master/images/" 
                             + name + ".png'/>"
         $("#idol").append(src);
+        restoreCoord($("#" + name));
       }
       
       function hideToggle() {
@@ -85,7 +87,32 @@
         });
       }
                      
+    function restoreCoord(target) {
+    // target is jQuery object
+      var id = target.attr("id");
+      if (id == null) return;
+      var savedCoord = localStorage.getItem(id);
+      if ( savedCoord === null ) {
+        return;
+      }
+      target.attr("data-x", savedCoord.x);
+      target.attr("data-y", savedCoord.y);
+      target.css("transform",
+          'translate(' + x + 'px, ' + y + 'px)');
 
+
+    }
+
+    function storeCoord(target) {
+    // target is interactjs object
+       x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
+            y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+      var coord = {
+        x: x,
+        y: y
+      }
+      localStoage.setItem(target.getAttribute('id'), coord);
+    }
 
     </script>
   </head>

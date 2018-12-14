@@ -53,21 +53,24 @@
       
         var idols = [
       function addIdolImage(){
-          "chihaya","chizuru","ayumu","azusa",
-          "haruka","hibiki","hinata","iku",
-          "kana","kaori","karen","konomi","kotoha","makoto","minako","mirai","arisa",
-          "mami","matsuri","megumi","miki","elena","emily","fuuka",
-          "miya","nao","noriko","reika","rio",
-          "ritsuko","roco","sayoko","serika",
-          "takane","tamaki","tomoka","tsubasa","tsumugi","umi","yayoi",
-          ];
-        var all=["yukiho","iori"];
-        var princess=[,"yuriko"];
-        var fairy=[,"julia","shiho","sizuka","subaru","mizuki","momoko"];
-        var angel=["akane","ami","anna",];
-        for(var i=0; i<idols.length; i++) {
-          addImage(idols[i]);
+        var all=["haruka","chihaya","miki","yukiho","iori","hibiki","ami","mami","azusa","takane","yayoi","makoto","ritsuko"];
+        var princess=["kotoha","minako","mirai","arisa",,"yuriko","nao","noriko","emily","umi","iku","kana","matsuri","sayoko"];
+        var fairy=[,"julia","shiho","sizuka","subaru","mizuki","momoko","chizuru","ayumu","megumi","tomoka","tsumugi"];
+        var angel=["akane","anna","hinata","miya","reika","rio","kaori","karen","konomi","elena","fuuka","serika","tamaki","tsubasa","roco"];
+        
+        for(var i=0; i<all.length; i++) {
+          addImage(all[i]);
         }
+        for(var i=0; i<princess.length; i++) {
+          addImage(princess[i]);
+        }
+        for(var i=0; i<fairy.length; i++) {
+          addImage(fairy[i]);
+        }
+        for(var i=0; i<angel.length; i++) {
+          addImage(angel[i]);
+        }
+        
       }
         
       function addImage(name){

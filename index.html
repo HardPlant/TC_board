@@ -37,6 +37,10 @@
       
         $(function() {
           addIdolImage();
+          $("#add_idol_dropdown").on("change", function(){
+            var selected = $(this).find(':selected').val();
+            addImage(selected, true);
+          });
         });
       
       function dragMoveListener (event) {
@@ -85,12 +89,14 @@
         $("#add_idol_dropdown").val(allstars);
       }
         
-      function addImage(name){
+      function addImage(name, isAppend){
         var src = "<img id="+ name + " class='draggable movable-box'"
                             + " src='https://raw.githubusercontent.com/HardPlant/TC_board/master/images/" 
                             + name + ".png'/>"
         $("#idol").append(src);
-        restoreCoord($("#" + name));
+        if(!isAppend){
+          restoreCoord($("#" + name));
+        }
       }
       
                      

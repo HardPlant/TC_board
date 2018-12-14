@@ -95,6 +95,9 @@
       if ( savedCoord === null ) {
         return;
       }
+      
+      console.log(id + "'s localStorage : " + saveCoord.x + ", " + saveCoord.y);
+      
       target.attr("data-x", savedCoord.x);
       target.attr("data-y", savedCoord.y);
       target.css("transform",
@@ -106,11 +109,12 @@
     function storeCoord(target) {
     // target is interactjs object
        x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
-            y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+       y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
       var coord = {
         x: x,
         y: y
       }
+      console.log("storing " + target.getAttribute('id') + "'s "+ coord.x + ", " + coord.y);
       localStorage.setItem(target.getAttribute('id'), coord);
     }
 
